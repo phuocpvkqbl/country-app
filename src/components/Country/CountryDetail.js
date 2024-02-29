@@ -29,7 +29,7 @@ function CountryDetail({ data }) {
             <p>Khu vực: {data.subRegion}</p>
             <p>Múi giờ: {data.timezones.join(', ')}</p>
             <p>Mã điện thoại quốc gia: {data.callingCode}</p>
-            <p>Tên miền Internet: {data.domains.join(", ")}</p>
+            <p>xxx Tên miền Internet: {data.domains.join(", ")}</p>
             <p>
                 Địa điểm trên bản đồ:{" "}
                 <a
