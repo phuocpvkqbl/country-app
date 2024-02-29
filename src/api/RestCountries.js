@@ -14,8 +14,10 @@ export const getCountriesByName = async (querystring) => {
     return response
 }
 
-export default { 
+const restCountriesApi = { 
     getCountryByCode,
     getAllCountry,
     getCountriesByName
 }
+
+export default restCountriesApi
