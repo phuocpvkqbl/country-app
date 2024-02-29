@@ -1,17 +1,12 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import About from './components/About'
 import Document from './components/Document'
-import * as countryService from './services/Country'
+import Country from './components/Country/index'
 
 function App() {
-  const countriesJSON = localStorage.getItem('countries');
-  if (countriesJSON === null) {
-    let countries =  countryService.getAllCountryService('fields=name,cioc').then((result) => {
-      localStorage.setItem('countries', JSON.stringify(result.data))
-    } )
-  }
+
   return (
     <div className="App">
       <Router>
@@ -25,7 +20,7 @@ function App() {
 
 let Pages = function buildPages() {
   let pages = [
-    { key: 'home', path: '/', element: <Home /> },
+    { key: 'home', path: '/', element: <Country /> },
     { path: '/about', element: <About /> },
     { path: '/:type/:id', element: <Document /> }
   ]

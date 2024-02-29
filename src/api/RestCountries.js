@@ -1,10 +1,21 @@
 import axios from "axios"
-export  function getCountryByCode (payload) {
-    const response =  axios.get(`https://restcountries.com/v3.1/alpha/${payload}`)
+export const getCountryByCode = async (payload) => {
+    const response = await axios.get(`https://restcountries.com/v3.1/alpha/${payload}`)
     return response
 }
 
-export  function getAllCountry (querystring) {
-    const response = axios.get(`https://restcountries.com/v3.1/all?${querystring}`)
+export const getAllCountry = async (querystring) => {
+    const response = await axios.get(`https://restcountries.com/v3.1/all?${querystring}`)
     return response
+}
+
+export const getCountriesByName = async (querystring) => {
+    const response = await axios.get(`https://restcountries.com/v3.1/${querystring}`)
+    return response
+}
+
+export default { 
+    getCountryByCode,
+    getAllCountry,
+    getCountriesByName
 }
