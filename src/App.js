@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <Router basename="/country-app">
         <Routes>
           {Pages().map((route) => <Route {...route} />)}
         </Routes>
