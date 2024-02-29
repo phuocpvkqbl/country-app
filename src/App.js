@@ -6,10 +6,11 @@ import Document from './components/Document'
 import Country from './components/Country/index'
 
 function App() {
-
+  const appName = '/' + process.env.REACT_APP_NAME
+  console.log('App Name:', appName);
   return (
     <div className="App">
-      <Router basename="/country-app">
+      <Router basename={appName}>
         <Routes>
           {Pages().map((route) => <Route {...route} />)}
         </Routes>
